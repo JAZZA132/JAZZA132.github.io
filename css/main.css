@@ -415,3 +415,8 @@ table td {
 		opacity: 0.95;
 	}
 }
+
+/* 取消程式碼區塊出現行號 */
+.highlight .gutter{
+	display: none;
+}
