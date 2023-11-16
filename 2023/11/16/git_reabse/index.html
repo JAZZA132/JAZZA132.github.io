@@ -8,6 +8,8 @@
 	<!-- title -->
 	
 	<title>
+	
+		當git rebase後悔了,又不想放棄原本的修改,調整指令教學 | 
 	 
 	Wang&#39;s blog
 	</title>
@@ -126,7 +128,7 @@
 
 			
 							<ul>
-								<li class="file">
+								<li class="file active">
 									<a href="/2023/11/16/git_reabse/">
                      
 										    當git rebase後悔了,又不想放棄原本的修改,調整指令教學
@@ -153,31 +155,87 @@
 
 	<!-- 引入正文 -->
 	<div id="content" class="content">
-		<div id="index">
+		<h1 id="article-title">
+	當git rebase後悔了,又不想放棄原本的修改,調整指令教學
+</h1>
+
+<!-- meta -->
+<div class="article-meta">
 	
-		<div class="index-li">
-			<a href="/2023/10/04/hello-world/">
-				<h2 class="index-title">
-					Hello World
-				</h2>
-				<div class="index-brief">
-					Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in 
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2023-10-04</span>
-                    
-                            
-                    
-                </div>
-		</div>	
-	
-	
-	<div id="index-paginator">
-		
-	</div>
+
+	<span>Wang wei-hsiang</span>
+	<span>2023-11-16 09:44:00</span>
+
+  <div id="article-categories">
+    
+		  <span>Categories：</span>
+      
+          
+              <span>
+                  <i class="fa fa-folder" aria-hidden="true">
+                  <a href="/categories/git/">git</a>
+                  </i>
+                
+              </span>
+          
+      
+    
+
+    
+		    <span>Tags：</span>
+        
+            
+                <span>
+                    <i class="fa fa-tag" aria-hidden="true">
+                    <a href="/tags/git/">git</a>
+                    </i>
+                </span>
+            
+        
+    
+  </div>
+
 </div>
+
+<!-- content -->
+<div id="article-content">
+	<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">A - B - C - F (master)</span><br><span class="line">         \</span><br><span class="line">          D - E (feature, origin/feature)</span><br></pre></td></tr></table></figure>
+
+<p>rebase之後變成</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">A - B - C - F (master)</span><br><span class="line">              \</span><br><span class="line">               D - E (feature)</span><br></pre></td></tr></table></figure>
+
+<p>這時候如果我後悔了,想要取消該次rebase,不想要F了,但想保留D、E,該如何做呢?使用reset應該是會把DE都清除掉的樣子</p>
+<p>使用 git rebase -i {commit 的hash},進入到vim介面<br>可以整理commit紀錄<br>有提交過的紀錄會已pick描述<br>剔除不想要的commit即可<br>當想要存檔離開的時候使用鍵盤左上角esc,輸入   :wq 即可 ,記得”:”也要輸入</p>
+
+</div>
+
+<!-- post-guide -->
+
+    <div class="post-guide">
+        <div class="item left">
+            
+        </div>
+        <div class="item right">
+            
+              <a href="/2023/10/04/hello-world/">
+                Hello World
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
+              </a>
+            
+        </div>
+    </div>
+
+
+<!-- comment - giscus -->
+
+
+<!-- comment - valine -->
+
+
+<script>
+	
+	
+</script>
 	</div>
 	<div id="footer">
 	<p>
