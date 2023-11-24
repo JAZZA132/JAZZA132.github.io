@@ -56,13 +56,6 @@
 
   
   <url>
-    <loc>https://jazza132.github.io/tags/git/</loc>
-    <lastmod>2023-11-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://jazza132.github.io/tags/spring/</loc>
     <lastmod>2023-11-24</lastmod>
     <changefreq>weekly</changefreq>
@@ -76,17 +69,24 @@
     <priority>0.2</priority>
   </url>
   
+  <url>
+    <loc>https://jazza132.github.io/tags/git/</loc>
+    <lastmod>2023-11-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
 
   
   <url>
-    <loc>https://jazza132.github.io/categories/git/</loc>
+    <loc>https://jazza132.github.io/categories/spring/</loc>
     <lastmod>2023-11-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://jazza132.github.io/categories/spring/</loc>
+    <loc>https://jazza132.github.io/categories/git/</loc>
     <lastmod>2023-11-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
