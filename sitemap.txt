@@ -1,9 +1,9 @@
+https://jazza132.github.io/bigData-JBOSS-wildfly7.4-GZIP/
 https://jazza132.github.io/hexo-generate-sitemap/
 https://jazza132.github.io/git_rebase/
 https://jazza132.github.io/Spring-IOC-DI-AOP/
 https://jazza132.github.io/tags/index.html
 https://jazza132.github.io/categories/index.html
-https://jazza132.github.io/hello-world/
 https://jazza132.github.io/
 https://jazza132.github.io/tags/spring/
 https://jazza132.github.io/tags/java/
