@@ -3,10 +3,10 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Wang's blog
+title: JAZZA132's blog
 subtitle: ''
 description: 'Work Life Balance'
-keywords:
+keywords: Web,JAVA,spring boot,git
 author: Wang wei-hsiang
 language: zh-TW
 timezone: 'Asia/Taipei'
@@ -14,7 +14,8 @@ timezone: 'Asia/Taipei'
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
 url: https://JAZZA132.github.io
-permalink: :year/:month/:day/:title/
+# permalink: :year/:month/:day/:title/
+permalink: :title/
 permalink_defaults:
 pretty_urls:
   trailing_index: true # Set to false to remove trailing 'index.html' from permalinks
@@ -97,11 +98,19 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: landscape
+theme: tree
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
-  type: 'git'
-  repo: 'https://github.com/JAZZA132/JAZZA132.github.io.git'
-  branch: 'master'
+  type: git
+  repo: https://github.com/JAZZA132/JAZZA132.github.io.git
+  branch: main
+
+sitemap:
+  path: 
+    - sitemap.xml
+    - sitemap.txt
+  rel: true
+  tags: true
+  categories: true
