@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+	<meta name="google-site-verification" content="FzNHefzHZP5SZUqa8Dm_lP5CoNfV676n7r1ApcnM7lI" />
+	<!-- title -->
+	
+	<title>
+	
+		大資料壓縮傳輸,JBOSS_wildfly 7.4中的GZIP 壓縮啟用 | 
+	 
+	JAZZA132&#39;s blog
+	</title>
+	
+	<!-- keywords,description -->
+	
+		<meta name="keywords" content="Web,JAVA,spring boot,git" />
+	
+	
+		<meta name="description" content="Work Life Balance" />
+	
+
+	<!-- favicon -->
+	
+	<link rel="shortcut icon" href="/favicon.ico">
+	
+
+
+	<!-- search -->
+	<script>
+		var searchEngine = "https://www.google.com/search?q=";
+		if(typeof searchEngine == "undefined" || searchEngine == null || searchEngine == ""){
+			searchEngine = "https://www.google.com/search?q=";
+		}
+		var homeHost = "JAZZA132.com";
+		if(typeof homeHost == "undefined" || homeHost == null || homeHost == ""){
+			homeHost = window.location.host;
+		}
+	</script>
+
+
+	
+<link rel="stylesheet" href="/css/main.css">
+
+	
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/styles/darcula.min.css">
+
+	
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+
+
+	
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.7.0/dist/jquery.min.js"></script>
+
+	
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+	
+<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/highlight.min.js"></script>
+
+	
+<script src="https://cdn.jsdelivr.net/npm/jquery-pjax@2.0.1/jquery.pjax.min.js"></script>
+
+	
+<script src="/js/main.js"></script>
+
+
+	
+		
+<script src="https://cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min.js"></script>
+
+		
+<script src="https://cdn.jsdelivr.net/npm/valine@v1.5.1/dist/Valine.min.js"></script>
+
+	
+	
+		<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+	<header id="header">
+    <a id="title" href="/" class="logo">JAZZA132's blog</a>
+
+	<ul id="menu">
+    
+      <li class="menu-item">
+        <a href="/about" class="menu-item-link">About</a>
+      </li>
+    
+
+    
+      <li class="menu-item">
+        <a href="/tags" class="menu-item-link">Tags</a>
+      </li>
+    
+
+    
+      <li class="menu-item">
+        <a href="/categories" class="menu-item-link">Categories</a>
+      </li>
+    
+
+    
+  
+    
+      <li class="menu-item">
+        <a href='https://github.com/JAZZA132' class="menu-item-link" target="_blank">
+          <i class="fa fa-github fa-2x"></i>
+        </a>
+      </li>
+    
+	</ul>
+</header>
+
+	
+<div id="sidebar">
+	<button id="sidebar-toggle" class="toggle" ><i class="fa fa-arrow-right " aria-hidden="true"></i></button>
+	
+	<div id="site-toc">
+		<input id="search-input" class="search-input" type="search" placeholder="Press Enter to search">
+		<div id="tree">
+			
+
+			
+							<ul>
+								<li class="file">
+									<a href="/Spring-IOC-DI-AOP/">
+                     
+										    Spring IOC(控制反轉)和DI(依賴注入)、AOP
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file active">
+									<a href="/bigData-JBOSS-wildfly7.4-GZIP/">
+                     
+										    大資料壓縮傳輸,JBOSS_wildfly 7.4中的GZIP 壓縮啟用
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/git_rebase/">
+                     
+										    當git rebase後悔了,又不想放棄原本的修改,調整指令教學
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/hexo-generate-sitemap/">
+                     
+										    hexo 產生 sitemap
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+		</div>
+	</div>
+</div>
+
+	<!-- 引入正文 -->
+	<div id="content" class="content">
+		<h1 id="article-title">
+	大資料壓縮傳輸,JBOSS_wildfly 7.4中的GZIP 壓縮啟用
+</h1>
+
+<!-- meta -->
+<div class="article-meta">
+	
+
+	<span>Wang wei-hsiang</span>
+	<span>2023-12-28 14:41:01</span>
+
+  <div id="article-categories">
+    
+		  <span>Categories：</span>
+      
+    
+
+    
+		    <span>Tags：</span>
+        
+            
+                <span>
+                    <i class="fa fa-tag" aria-hidden="true">
+                    <a href="/tags/jboss/">jboss</a>
+                    </i>
+                </span>
+            
+        
+    
+  </div>
+
+</div>
+
+<!-- content -->
+<div id="article-content">
+	<p>公司專案回應並且渲染到前端畫面的時間過長大約要到20秒</p>
+<p>user一定不能接受所以嘗試解決</p>
+<p>首先查到前台拿到資料loading大約才2秒,問題出在程式與server的回應時間</p>
+<p>討論決議先嘗試啟用gzip以縮短響應時間</p>
+<hr>
+<p>HTTP 壓縮可以大大提高瀏覽網站的速度，它的原理是，在客戶端請求網頁後，從伺服器端將網頁檔案壓縮，再下載到客戶端，由客戶端的瀏覽器負責解壓縮並瀏覽。 相對於普通的瀏覽流程HTML ,CSS,Javascript , Text ，它可以節省40%左右的流量。 更重要的是，它可以對動態產生的，包括CGI、PHP , JSP , ASP , Servlet,SHTML等輸出的網頁也能壓縮，壓縮效率驚人。</p>
+<hr>
+<h2 id="xml修改"><a href="#xml修改" class="headerlink" title="xml修改"></a>xml修改</h2><ol>
+<li></li>
+</ol>
+<p>jboss-eap-7.4\standalone\configuration\standalone.xml</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&lt;subsystem xmlns=<span class="string">&quot;urn:jboss:domain:undertow:1.2&quot;</span>&gt;   &lt;!-- <span class="variable constant_">SEARCH</span> <span class="variable constant_">FOR</span> <span class="attr">THIS</span>: <span class="attr">urn</span>:<span class="attr">jboss</span>:<span class="attr">domain</span>:undertow --&gt;</span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;<span class="name">buffer-cache</span> <span class="attr">name</span>=<span class="string">&quot;default&quot;</span>/&gt;</span></span>  </span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;<span class="name">server</span> <span class="attr">name</span>=<span class="string">&quot;default-server&quot;</span>&gt;</span>  </span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">http-listener</span> <span class="attr">name</span>=<span class="string">&quot;default&quot;</span> <span class="attr">socket-binding</span>=<span class="string">&quot;http&quot;</span>/&gt;</span>  </span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">host</span> <span class="attr">name</span>=<span class="string">&quot;default-host&quot;</span> <span class="attr">alias</span>=<span class="string">&quot;localhost&quot;</span>&gt;</span>  </span></span><br><span class="line"><span class="language-xml">  (...)</span></span><br><span class="line"><span class="language-xml"></span></span><br><span class="line"><span class="language-xml">  <span class="comment">&lt;!-- ADD THIS FOR GZIP COMPRESSION --&gt;</span></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;<span class="name">filter-ref</span> <span class="attr">name</span>=<span class="string">&quot;gzipFilter&quot;</span> <span class="attr">predicate</span>=<span class="string">&quot;exists[&#x27;%&#123;o,Content-Type&#125;&#x27;] and regex[pattern=&#x27;(?:application/javascript|text/css|text/html|text/xml|application/json)(;.*)?&#x27;, value=%&#123;o,Content-Type&#125;, full-match=true]&quot;</span>/&gt;</span>  </span></span><br><span class="line"><span class="language-xml">  <span class="comment">&lt;!-- /GZIP COMPRESSION --&gt;</span></span></span><br><span class="line"><span class="language-xml"></span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;/<span class="name">host</span>&gt;</span>  </span></span><br><span class="line"><span class="language-xml">  <span class="tag">&lt;/<span class="name">server</span>&gt;</span></span>  </span><br><span class="line">(...)  </span><br><span class="line">  &lt;filters&gt;  </span><br><span class="line">  (...)  </span><br><span class="line"></span><br><span class="line">  &lt;!-- <span class="variable constant_">ADD</span> <span class="variable constant_">THIS</span> <span class="variable constant_">FOR</span> <span class="variable constant_">GZIP</span> <span class="variable constant_">COMPRESSION</span> --&gt;</span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;<span class="name">gzip</span> <span class="attr">name</span>=<span class="string">&quot;gzipFilter&quot;</span>/&gt;</span></span>  </span><br><span class="line">  &lt;!-- /<span class="variable constant_">GZIP</span> <span class="variable constant_">COMPRESSION</span> --&gt;</span><br><span class="line"></span><br><span class="line">  &lt;/filters&gt;  </span><br><span class="line">&lt;/subsystem&gt;</span><br></pre></td></tr></table></figure>
+
+<p>設定都在<subsystem>標籤之中,filters標籤需要額外手動添加</p>
+<ol start="2">
+<li></li>
+</ol>
+<p>右鍵點擊開啟content-encoding<br><img src="/./images/1.png"> <br><br><img src="/./images/2.png"> <br><br><img src="/./images/3.png"> <br></p>
+<p>成功</p>
+<h2 id="management-console-jboss"><a href="#management-console-jboss" class="headerlink" title="management console jboss"></a>management console jboss</h2><ol>
+<li></li>
+</ol>
+<p><img src="/./images/4.png"></p>
+<p><img src="/./images/5.png"></p>
+<p>先添加Name</p>
+<ol start="2">
+<li></li>
+</ol>
+<p><img src="/./images/6.png"></p>
+<p><img src="/./images/7.png"></p>
+<p>點擊filters</p>
+<ol start="3">
+<li></li>
+</ol>
+<p><img src="/./images/8.png"></p>
+<p>添加name跟邏輯,重啟</p>
+
+</div>
+
+<!-- post-guide -->
+
+    <div class="post-guide">
+        <div class="item left">
+            
+        </div>
+        <div class="item right">
+            
+              <a href="/hexo-generate-sitemap/">
+                hexo 產生 sitemap
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
+              </a>
+            
+        </div>
+    </div>
+
+
+<!-- comment - giscus -->
+
+
+<!-- comment - valine -->
+
+
+<script>
+	
+	
+</script>
+	</div>
+	<div id="footer">
+	<p>
+	©<span id="footerYear-start"></span>-<span id="footerYear-end"></span>
+
+	
+	    <a href="/">Wang wei-hsiang</a>
+	
+	
+	
+		|
+		<span id="busuanzi_container_site_pv">
+			pv
+			<span id="busuanzi_value_site_pv"></span>
+		</span>
+		|
+		<span id="busuanzi_container_site_uv"> 
+			uv
+			<span id="busuanzi_value_site_uv"></span>
+		</span>
+	
+	<br>
+	Theme <a href="//github.com/wujun234/hexo-theme-tree" target="_blank">Tree</a>
+	by <a href="//wujun.me" target="_blank">Wu Jun</a>
+	Powered by <a href="//hexo.io" target="_blank">Hexo</a>
+	</p>
+</div>
+
+
+<script type="text/javascript">
+	document.getElementById('footerYear-start').innerHTML = new Date().getFullYear() + '';
+</script>
+
+<script type="text/javascript">
+	document.getElementById('footerYear-end').innerHTML = new Date().getFullYear() + '';
+</script>
+
+
+
+	<button id="totop-toggle" class="toggle"><i class="fa fa-angle-double-up" aria-hidden="true"></i></button>
+</body>
+</html>
