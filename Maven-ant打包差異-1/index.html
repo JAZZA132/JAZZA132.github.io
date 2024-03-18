@@ -8,6 +8,8 @@
 	<!-- title -->
 	
 	<title>
+	
+		Maven,ant打包差異 | 
 	 
 	JAZZA132&#39;s blog
 	</title>
@@ -128,7 +130,7 @@
 
 			
 							<ul>
-								<li class="file">
+								<li class="file active">
 									<a href="/Maven-ant%E6%89%93%E5%8C%85%E5%B7%AE%E7%95%B0-1/">
                      
 										    Maven,ant打包差異
@@ -188,69 +190,75 @@
 
 	<!-- 引入正文 -->
 	<div id="content" class="content">
-		<div id="index">
-	
-		<div class="index-li">
-			<a href="/Spring-IOC-DI-AOP/">
-				<h2 class="index-title">
-					Spring IOC(控制反轉)和DI(依賴注入)、AOP
-				</h2>
-				<div class="index-brief">
-					Spring IOC(控制反轉)和DI(依賴注入)、AOPIOCIoc(Inversion of Control)翻譯成中文就是“控制反轉”,一個比較晦澀的詞語。如果要真正理解這個詞語,必須要用過Spring框架才行,因為Spring開啟了一種新的程式設計方式。
-傳統的程式設計方式: 所有的物件和資
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2023-11-24</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/spring/">spring</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/git_rebase/">
-				<h2 class="index-title">
-					當git rebase後悔了,又不想放棄原本的修改,調整指令教學
-				</h2>
-				<div class="index-brief">
-					當git rebase後悔了,又不想放棄原本的修改,調整指令教學123A - B - C - F (master)         \          D - E (feature, origin/feature)
+		<h1 id="article-title">
+	Maven,ant打包差異
+</h1>
 
-rebase之後變成
-123A - B - C - F (master)    
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2023-11-16</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/git/">git</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>	
+<!-- meta -->
+<div class="article-meta">
 	
-	
-	<div id="index-paginator">
-		
-	</div>
+
+	<span>Wang wei-hsiang</span>
+	<span>2024-03-18 20:55:37</span>
+
+  <div id="article-categories">
+    
+		  <span>Categories：</span>
+      
+    
+
+    
+		    <span>Tags：</span>
+        
+    
+  </div>
+
 </div>
+
+<!-- content -->
+<div id="article-content">
+	<p>專案需要給別人做打包</p>
+<p>對方使用ant</p>
+<p>但打包完之後呼叫部屬完api會失效</p>
+<hr>
+<p>排查</p>
+<p>兩邊編譯出的檔案反編譯看不出差異</p>
+<p>但細看檔案大小會有不同</p>
+<p>推測編譯的結果有問題</p>
+<p><img src="/./images/Maven-ant%E6%89%93%E5%8C%85%E5%B7%AE%E7%95%B0-1/1.png"> <br></p>
+<p>縮小範圍,是專案裡的@annotation在反序列化的時候導致的</p>
+<p>在編譯config中添加說明即可</p>
+<p><img src="/./images/Maven-ant%E6%89%93%E5%8C%85%E5%B7%AE%E7%95%B0-1/2.jpg"> <br></p>
+
+</div>
+
+<!-- post-guide -->
+
+    <div class="post-guide">
+        <div class="item left">
+            
+        </div>
+        <div class="item right">
+            
+              <a href="/bigData-JBOSS-wildfly7.4-GZIP/">
+                大資料壓縮傳輸,JBOSS_wildfly 7.4中的GZIP 壓縮啟用
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
+              </a>
+            
+        </div>
+    </div>
+
+
+<!-- comment - giscus -->
+
+
+<!-- comment - valine -->
+
+
+<script>
+	
+	
+</script>
 	</div>
 	<div id="footer">
 	<p>

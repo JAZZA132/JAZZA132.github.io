@@ -191,56 +191,30 @@
 		<div id="index">
 	
 		<div class="index-li">
-			<a href="/Spring-IOC-DI-AOP/">
+			<a href="/Maven-ant%E6%89%93%E5%8C%85%E5%B7%AE%E7%95%B0-1/">
 				<h2 class="index-title">
-					Spring IOC(控制反轉)和DI(依賴注入)、AOP
+					Maven,ant打包差異
 				</h2>
 				<div class="index-brief">
-					Spring IOC(控制反轉)和DI(依賴注入)、AOPIOCIoc(Inversion of Control)翻譯成中文就是“控制反轉”,一個比較晦澀的詞語。如果要真正理解這個詞語,必須要用過Spring框架才行,因為Spring開啟了一種新的程式設計方式。
-傳統的程式設計方式: 所有的物件和資
-					...
-				</div>
-			</a>
-                <div class="article-meta">
-				    <span>2023-11-24</span>
-                    
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/spring/">spring</a>
-										
-                                    </span>
-                                
-                            
-                    
-                </div>
-		</div>	
-	
-		<div class="index-li">
-			<a href="/git_rebase/">
-				<h2 class="index-title">
-					當git rebase後悔了,又不想放棄原本的修改,調整指令教學
-				</h2>
-				<div class="index-brief">
-					當git rebase後悔了,又不想放棄原本的修改,調整指令教學123A - B - C - F (master)         \          D - E (feature, origin/feature)
+					專案需要給別人做打包
+對方使用ant
+但打包完之後呼叫部屬完api會失效
 
-rebase之後變成
-123A - B - C - F (master)    
+排查
+兩邊編譯出的檔案反編譯看不出差異
+但細看檔案大小會有不同
+推測編譯的結果有問題
+ 
+縮小範圍,是專案裡的@annotation在反序列化的時候導致的
+在編譯config中添加說明即可
+ 
+
 					...
 				</div>
 			</a>
                 <div class="article-meta">
-				    <span>2023-11-16</span>
+				    <span>2024-03-18</span>
                     
-                            
-                                
-                                    <span>
-                                        <i class="fa fa-folder" aria-hidden="true"></i>
-                                        <a href="/categories/git/">git</a>
-										
-                                    </span>
-                                
                             
                     
                 </div>
