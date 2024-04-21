@@ -1,0 +1,9 @@
+header:
+  menu:
+    about: 關於
+    tags: 標籤
+    categories: 分類
+
+sidebar:
+  site-toc:
+    search: 按enter全文搜索
